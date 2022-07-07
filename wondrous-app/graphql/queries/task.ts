@@ -167,3 +167,12 @@ export const GET_COMPLETED_TASKS_BETWEEN_TIME_PERIOD = gql`
     }
   }
 `;
+
+export const GET_BOUNTIES_TO_EXPLORE = gql`
+  query getBountiesToExplore($limit: Int, $offset: Int) {
+    getBountiesToExplore(limit: $limit, offset: $offset) {
+      ...TaskCardFragment
+    }
+  }
+  ${TaskCardFragment}
+`;
